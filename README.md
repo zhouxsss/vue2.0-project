@@ -1,4 +1,7 @@
 # vue2.0-project
+create by @vue/cli 4.4.7 on 20200729
+
+
 
 ## Project setup
 ```
