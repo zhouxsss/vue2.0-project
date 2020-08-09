@@ -4,12 +4,14 @@ import { rootMenus } from './utils/menus'
 import './utils/myDirective'
 
 import Container from './components/layout/Container'
-// import App from './App'
+import App from './App'
 import store from './store'
 import routes from './utils/routes'
 
 Vue.use(VueRouter)
-const router = new VueRouter(routes)
+const router = new VueRouter({
+  routes // (缩写) 相当于 routes: routes
+})
 Vue.config.productionTip = false
 
 //注册全局组件
@@ -21,7 +23,8 @@ const app = new Vue({
   router,
   data: {
     currentRoute: window.location.pathname,
-    rootMenus
+    rootMenus,
+    routes
   },
   computed: {
     ViewComponent() {
@@ -33,7 +36,9 @@ const app = new Vue({
   },
   render(h) {
     //动态渲染组件
-    return h(this.ViewComponent)
+    // return h(this.ViewComponent)
+
+    return h(App)
   }
 })
 

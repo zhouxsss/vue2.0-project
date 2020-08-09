@@ -1,8 +1,8 @@
 <template>
   <div :class="$style.container">
     <ul>
-      <li v-for="route in Object.keys(rootMenus)" :key="route">
-        <v-link :href="route">{{rootMenus[route]}}</v-link>
+      <li v-for="menu in menus" :key="menu.title">
+        <router-link :to="menu.path">{{menu.title}}</router-link>
       </li>
     </ul>
     <div :class="$style.main">
@@ -12,21 +12,8 @@
 </template>
 
 <script>
-import VLink from '../VLink'
 export default {
-  components: {
-    VLink
-  },
-  data() {
-    return {
-      rootMenus: this.$root.rootMenus
-    }
-  },
-  methods: {
-    myRender(val) {
-      return val
-    }
-  }
+  props: ["menus"]
 }
 </script>
 

@@ -1,22 +1,20 @@
 <template>
-  <Container>
-    <div class="welcome">
-      <img alt="Vue logo" src="../assets/logo.png" />
-      <HelloWorld :msg="msg">
-        <!-- slot引用变量 -->
-        <template #default="slotProps">
-          {{ slotProps.user.firstName }}
-        </template>
-      </HelloWorld>
-      {{ title }}{{ count }}
-      <my-input
-        :label="input.label"
-        :type="input.type"
-        v-bind:value.sync="input.value"
-      ></my-input>
-      <button v-on:click="handleAdd">add</button>
-    </div>
-  </Container>
+  <div class="welcome">
+    <img alt="Vue logo" src="../assets/logo.png" />
+    <HelloWorld :msg="msg">
+      <!-- slot引用变量 -->
+      <template #default="slotProps">
+        {{ slotProps.user.firstName }}
+      </template>
+    </HelloWorld>
+    {{ title }}{{ count }}
+    <my-input
+      :label="input.label"
+      :type="input.type"
+      v-bind:value.sync="input.value"
+    ></my-input>
+    <button v-on:click="handleAdd">add</button>
+  </div>
 </template>
 
 <script>
@@ -53,6 +51,14 @@ export default {
     },
     handleAdd: function() {
       this.$store.dispatch('increment', this.input.value)
+    }
+  },
+  beforeRouteLeave: (to, from , next)=>{
+    const answer = window.confirm('确认退出？')
+    if (answer) {
+      next()
+    } else {
+      next(false)
     }
   }
 }

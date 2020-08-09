@@ -1,7 +1,5 @@
 <template>
-  <Container :menus="$root.routes[0].children">
-    <router-view />
-  </Container>
+  <p>count:{{ count }}</p>
 </template>
 
 <script>
