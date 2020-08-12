@@ -8,8 +8,8 @@
       </template>
     </HelloWorld>
     {{ title }}{{ count }}
-    <my-input :label="input.label" :type="input.type" v-bind:value.sync="input.value"></my-input>
-    <button v-on:click="handleAdd">add</button>
+    <my-input :label="input.label" :type="input.type" :value.sync="input.value"></my-input>
+    <button @click="handleAdd">add</button>
   </div>
 </template>
 
@@ -21,11 +21,11 @@ import { myMixin } from '../mixins/myMixin'
 
 export default {
   name: 'Welcome',
-  mixins: [myMixin],
   components: {
     HelloWorld,
     'my-input': Input,
   },
+  mixins: [myMixin],
   data: function() {
     return {
       msg: 'Welcome',

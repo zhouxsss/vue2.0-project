@@ -1,5 +1,5 @@
 export default {
   home: '/',
   welcome: '/welcome',
-  other: '/other'
+  other: '/other',
 }

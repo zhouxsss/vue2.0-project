@@ -10,7 +10,7 @@ import routes from './utils/routes'
 
 Vue.use(VueRouter)
 const router = new VueRouter({
-  routes // (缩写) 相当于 routes: routes
+  routes, // (缩写) 相当于 routes: routes
 })
 Vue.config.productionTip = false
 
@@ -24,7 +24,7 @@ const app = new Vue({
   data: {
     currentRoute: window.location.pathname,
     rootMenus,
-    routes
+    routes,
   },
   computed: {
     ViewComponent() {
@@ -32,14 +32,14 @@ const app = new Vue({
       return matchingView
         ? require(`./pages/${matchingView}.vue`).default
         : require('./pages/404.vue').default
-    }
+    },
   },
   render(h) {
     //动态渲染组件
     // return h(this.ViewComponent)
 
     return h(App)
-  }
+  },
 })
 
 window.addEventListener('popstate', () => {

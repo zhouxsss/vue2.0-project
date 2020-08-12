@@ -27,20 +27,20 @@
     "prettier": "^1.19.1",
     "vue-template-compiler": "^2.6.11"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended",
-      "@vue/prettier"
+  "hooks": {
+    "pre-commit": "lint-staged",
+    "pre-publish": "npm run lint",
+    "commit-msg": "commitlint -x @commitlint/config-conventional -e $GIT_PARAMS"
+  },
+  "lint-staged": {
+    "src/**/*.{vue}": [
+      "eslint --fix",
+      "git add"
     ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
+    "src/**/*.{scss,css}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "browserslist": [
     "> 1%",

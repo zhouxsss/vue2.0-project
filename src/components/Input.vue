@@ -1,13 +1,7 @@
 <template>
   <div>
     <label>{{ label }}</label>
-    <input
-      v-bind="$attrs"
-      v-bind:type="type"
-      v-bind:value="value"
-      v-on:input="handleInputChange"
-      v-focus
-    />
+    <input v-focus v-bind="$attrs" :type="type" :value="value" @input="handleInputChange" />
   </div>
 </template>
 <script>
@@ -16,7 +10,7 @@ export default {
   methods: {
     handleInputChange(e) {
       this.$emit('update:value', e.target.value)
-    }
-  }
+    },
+  },
 }
 </script>

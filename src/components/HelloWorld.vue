@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <slot v-bind:user="user">
+    <slot :user="user">
       {{ user.lastName }}
     </slot>
   </div>
@@ -9,19 +9,19 @@
 
 <script>
 export default {
-  name: "HelloWorld",
+  name: 'HelloWorld',
   props: {
-    msg: String
+    msg: String,
   },
   data: function() {
     return {
       user: {
-        firstName: "zhou",
-        lastName: "xs"
-      }
-    };
-  }
-};
+        firstName: 'zhou',
+        lastName: 'xs',
+      },
+    }
+  },
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -14,8 +14,8 @@ module.exports = {
       //给sass-loader 传递选项
       // `scss` 语法会要求语句结尾必须有分号
       scss: {
-        additionalData: `@import "~@/constants/variables.scss";`
-      }
-    }
-  }
+        additionalData: `@import "~@/constants/variables.scss";`,
+      },
+    },
+  },
 }

@@ -5,7 +5,7 @@ import HomeContent from '../pages/HomeContent'
 import Other from '../pages/Other'
 
 export default [
-  { 
+  {
     path: '/',
     title: 'home',
     component: Home,
@@ -13,19 +13,18 @@ export default [
       {
         path: '/', //设为''无法跳转回来
         title: 'result',
-        component: HomeContent
+        component: HomeContent,
       },
       {
         path: paths.welcome, //这个值不能是undefined
         title: 'welcome',
-        component: Welcome
+        component: Welcome,
       },
-    ]
+    ],
   },
   {
     path: paths.other,
     title: 'other',
-    component: Other
-  }
+    component: Other,
+  },
 ]
-

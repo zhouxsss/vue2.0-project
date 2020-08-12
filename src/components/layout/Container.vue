@@ -2,7 +2,7 @@
   <div :class="$style.container">
     <ul>
       <li v-for="menu in menus" :key="menu.title">
-        <router-link :to="menu.path">{{menu.title}}</router-link>
+        <router-link :to="menu.path">{{ menu.title }}</router-link>
       </li>
     </ul>
     <div :class="$style.main">
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  props: ["menus"]
+  props: ['menus'],
 }
 </script>
 

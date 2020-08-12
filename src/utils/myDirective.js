@@ -1,8 +1,8 @@
-import Vue from "vue";
+import Vue from 'vue'
 
-Vue.directive("focus", {
+Vue.directive('focus', {
   inserted: function(el) {
     //聚焦元素
-    el.focus();
-  }
-});
+    el.focus()
+  },
+})
