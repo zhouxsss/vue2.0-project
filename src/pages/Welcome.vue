@@ -8,11 +8,7 @@
       </template>
     </HelloWorld>
     {{ title }}{{ count }}
-    <my-input
-      :label="input.label"
-      :type="input.type"
-      v-bind:value.sync="input.value"
-    ></my-input>
+    <my-input :label="input.label" :type="input.type" v-bind:value.sync="input.value"></my-input>
     <button v-on:click="handleAdd">add</button>
   </div>
 </template>
@@ -28,7 +24,7 @@ export default {
   mixins: [myMixin],
   components: {
     HelloWorld,
-    'my-input': Input
+    'my-input': Input,
   },
   data: function() {
     return {
@@ -37,30 +33,30 @@ export default {
       input: {
         type: 'number',
         label: 'addition: ',
-        value: 0
-      }
+        value: 0,
+      },
     }
   },
   computed: mapState({
-    count: state => state.count
+    count: state => state.count,
   }),
   methods: {
     handleChange: function(newValue) {
-      console.log('newValue:', newValue)
+      console.log('newValue:', newValue) //eslint-disable-line
       this.msg = newValue
     },
     handleAdd: function() {
       this.$store.dispatch('increment', this.input.value)
-    }
+    },
   },
-  beforeRouteLeave: (to, from , next)=>{
+  beforeRouteLeave: (to, from, next) => {
     const answer = window.confirm('确认退出？')
     if (answer) {
       next()
     } else {
       next(false)
     }
-  }
+  },
 }
 </script>
 

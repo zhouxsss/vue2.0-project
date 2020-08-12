@@ -1,10 +1,10 @@
-export var myMixin = {
+export const myMixin = {
   created: function() {
-    this.hello();
+    this.hello()
   },
   methods: {
     hello: function() {
-      console.log("hello from mixin");
-    }
-  }
-};
+      console.log('hello from mixin') //eslint-disable-line
+    },
+  },
+}
