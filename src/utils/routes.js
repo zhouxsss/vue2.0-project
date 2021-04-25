@@ -3,6 +3,10 @@ import Welcome from '../pages/Welcome'
 import Home from '../pages/Home'
 import HomeContent from '../pages/HomeContent'
 import Other from '../pages/Other'
+import VirtualScrollTree from '../pages/VirtualScrollTree'
+import AVueDemo from '../pages/AVueDemo'
+import DraggableSort from '../pages/DraggableSort'
+import BigFileUpload from '../pages/BigFileUpload'
 
 export default [
   {
@@ -19,6 +23,26 @@ export default [
         path: paths.welcome, //这个值不能是undefined
         title: 'welcome',
         component: Welcome,
+      },
+      {
+        path: paths.virtualScrollTree,
+        title: 'VirtualScrollTree',
+        component: VirtualScrollTree,
+      },
+      {
+        path: paths.aVue,
+        title: 'AVueDemo',
+        component: AVueDemo,
+      },
+      {
+        path: paths.draggableSort,
+        title: 'DraggableSort',
+        component: DraggableSort,
+      },
+      {
+        path: paths.bigFileUpload,
+        title: 'BigFileUpload',
+        component: BigFileUpload,
       },
     ],
   },
