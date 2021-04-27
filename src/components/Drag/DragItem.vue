@@ -11,7 +11,7 @@
     @dragenter.stop="onDragEnter"
     @dragend.stop="onDragend"
     :draggable="!$slots.drag || isDrag"
-    :style="{cursor: !$slots.drag ? 'move': ''}"
+    :style="{ cursor: !$slots.drag ? 'move' : '' }"
     class="__drag_item"
   >
     <slot name="drag" />

@@ -11,7 +11,7 @@
       <template #drag>
         <div>拖拽Dom</div>
       </template>
-      <div>{{item}}</div>
+      <div>{{ item }}</div>
     </drag-item>
   </drag-wrap>
 </template>
